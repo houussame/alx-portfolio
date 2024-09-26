@@ -2,15 +2,26 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const ContactPage = () => {
   return (
     <main className="flex-1 container mx-auto px-4 py-8 flex items-center justify-center">
-      <div className="w-full max-w-lg p-8 rounded-lg shadow-lg transition-colors duration-200">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
-          Contact Me
-        </h1>
-        <form className="space-y-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.3,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        className="w-full max-w-lg p-8 rounded-lg shadow-lg transition-colors duration-200">
+        <form
+          className="space-y-4"
+        >
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
+            Contact Me
+          </h1>
           <div>
             <label
               htmlFor="name"
@@ -40,7 +51,7 @@ const ContactPage = () => {
           </div>
           <Button className="w-full">Send Message</Button>
         </form>
-      </div>
+      </motion.div>
     </main>
   );
 };
