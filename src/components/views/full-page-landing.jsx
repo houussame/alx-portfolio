@@ -2,11 +2,17 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function FullPageLandingComponent() {
   return (
     <main className="flex-1 flex items-center justify-center px-4">
-      <div className="text-center space-y-6 transition-colors duration-200">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center space-y-6 transition-colors duration-200"
+      >
         <h2 className="text-sm uppercase tracking-wide">
           Hi, I'm Houssame
         </h2>
@@ -23,7 +29,7 @@ export default function FullPageLandingComponent() {
             Hire Me
           </Button>
         </Link>
-      </div>
+      </motion.div>
     </main>
   );
 }
